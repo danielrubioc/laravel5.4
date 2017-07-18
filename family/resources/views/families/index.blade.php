@@ -1,0 +1,33 @@
+@extends('admin.template.main')
+
+@section('title', 'home')
+
+
+
+@section('content')
+	<div class="container" id="gral-list-index">
+	    <h1>Lista de familias</h1>
+	    <br>
+
+	    <table class="table table-responsive">
+	    	<thead>
+	    			<tr>
+	    					<td>Nombre</td>
+	    					<td>Avatar</td>
+	    					<td>Accion</td>
+
+	    			</tr>
+	    	</thead>
+	    	<tbody>
+	    			@foreach ($families as $family)
+		    			<tr>	
+						    <td>{{ $family->name }}</td>
+						    <td>{{ $family->avatar }}</td>
+						    <td><a href="" class="btn btn-danger">Eliminar</a> <a href="" class="btn btn-info">Editar</a></td>
+		    			</tr>
+	    			@endforeach
+	    	</tbody>
+	    </table>
+
+	</div> 
+@endsection

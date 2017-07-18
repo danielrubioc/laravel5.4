@@ -10,7 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+rutas
+ 
+ GET POST PUT DELETE RESOURCE
+
+*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('users', 'UserController');
+
+
+
+Route::resource('families', 'FamilyController');
+
