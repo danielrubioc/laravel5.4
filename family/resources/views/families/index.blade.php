@@ -3,9 +3,10 @@
 @section('title', 'home')
 
 
-
 @section('content')
+
 	<div class="container" id="gral-list-index">
+		<a href="{{ URL::to('families/create') }}" class="btn btn-success">Nueva familia</a>
 	    <h1>Lista de familias</h1>
 	    <br>
 
@@ -23,7 +24,7 @@
 		    			<tr>	
 						    <td>{{ $family->name }}</td>
 						    <td>{{ $family->avatar }}</td>
-						    <td><a href="" class="btn btn-danger">Eliminar</a> <a href="" class="btn btn-info">Editar</a></td>
+						    <td><a href="" class="btn btn-danger">Eliminar</a> <a href="{{ URL::to('families/'.$family->id.'')}}" class="btn btn-info">Editar</a></td>
 		    			</tr>
 	    			@endforeach
 	    	</tbody>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Family;
-
+use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -30,8 +30,15 @@ class FamilyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $users= User::all(['id', 'name']);
+        foreach ($users as $data)
+        {
+            $users[$data->id] = $data->name;
+        }
+
         //
+        return view('families.create',['users' => $users]);
     }
 
     /**
@@ -43,6 +50,10 @@ class FamilyController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
+        $family = new Family($request->all());
+        $family->save();
+
     }
 
     /**
@@ -54,6 +65,7 @@ class FamilyController extends Controller
     public function show($id)
     {
         //
+        return view('families.show', ['family' => Family::findOrFail($id)]);
     }
 
     /**
@@ -65,6 +77,7 @@ class FamilyController extends Controller
     public function edit($id)
     {
         //
+  
     }
 
     /**
@@ -75,8 +88,9 @@ class FamilyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        //$request
+
     }
 
     /**
