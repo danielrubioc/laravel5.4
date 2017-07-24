@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -14,11 +18,9 @@ class UserController extends Controller
     public function index()
     {
         //
-        $data = Family::all();
-        //Enviamos esos registros a la vista.
-        $families = DB::table('family')->paginate(5);
+        $users = DB::table('users')->paginate(12);
 
-        return view('families.index', ['families' => $families]);
+        return view('users.index', ['users' => $users]);
     }
 
     /**
@@ -29,6 +31,8 @@ class UserController extends Controller
     public function create()
     {
         //
+        
+        return view('users.create');
     }
 
     /**
@@ -37,9 +41,31 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        //dd($request);
+        $user = new User($request->all());
+        $user->password = bcrypt($request->password);
+
+        $count = User::where('email', $user->email)->count();
+        //dd($count);
+        if ($count<=0)  // si no encuentro el mail guardo
+        {                       
+            if ($user->save()) 
+            {
+                 flash('El usuario se creo correctamente!')->success();
+                 return redirect('users');
+            }else
+            {
+                 flash('Disculpa! el usuario no se pudo crear.')->error();
+                 return view('users.create');
+            }
+        } else
+        {   
+            flash('El email ingresado ya se encuentra en la base de datos!')->error();
+            return view('users.create');
+        }
+       
     }
 
     /**
@@ -61,7 +87,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('users.edit', ['user' => User::findOrFail($id)]);
     }
 
     /**
@@ -71,9 +97,27 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        //
+        $user = User::find($id); 
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->avatar = $request->avatar;
+        $user->type = $request->type;
+        
+        if ($user->save()) {
+            flash('El usuario '. $user->name .' se actualizó correctamente!')->success();
+            return redirect('users');
+        }else
+        {
+             flash('Disculpa! el usuario no se pudo crear.')->error();
+             return view('users.edit');
+        }
+        
+
+
+
+
     }
 
     /**
@@ -85,5 +129,15 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        if ($user->delete()) {
+            flash('Usuario eliminado correctamente!')->success();
+            return redirect('users');
+
+        } else{
+            flash('No se pudo eliminar el usuario!')->error();   
+            return redirect('users');
+        }
+
     }
 }

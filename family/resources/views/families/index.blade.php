@@ -15,6 +15,7 @@
 	    			<tr>
 	    					<td>Nombre</td>
 	    					<td>Avatar</td>
+	    					<td>Tipo</td>
 	    					<td>Accion</td>
 
 	    			</tr>

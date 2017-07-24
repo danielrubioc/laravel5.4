@@ -7,38 +7,29 @@
 
 <div class="container">
 	<h3><a href="{{ route('families.index') }}">Volver a lista de familias</a> </h3>	
-	<form class="form-horizontal" action="/update/{{ $family->id }}">
-		
-		{{csrf_field()}}
-		<input name="_method" type="hidden" value="PATCH">
-		<fieldset>
-		<!-- Form Name -->
-		<legend>Actualiza los datos de tu familia</legend>
+	
 
-		<!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Nombre</label>  
-		  <div class="col-md-4">
-		  <input id="frm_name" name="frm_name" type="text" placeholder="Nombre de la familia" class="form-control input-md" value="{{ $family->name }}" />
-		  <span class="help-block">help</span>  
-		  </div>
+	{!! Form::open(['action' => 'FamilyController@update', 'method' => 'POST']) !!}
+
+		<div class="form-gruop">
+			{!! Form::label('name', 'Nombre')!!}
+			{!! Form::text('name', null,['class' => 'form-control', 'placeholder' => 'Nombre completo', 'required']) !!}
+		</div>		
+		<div class="form-gruop">
+			{!! Form::label('avatar', 'Avatar')!!}
+			{!! Form::text('avatar', null,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
+		</div>	
+		<div class="form-gruop">
+			{!! Form::label('user_id', 'Usuario')!!}
+			{!! Form::select('user_id', $users, null,['class' => 'form-control', 'required']) !!}
+		</div>	
+
+
+		<div class="form-gruop">
+			{!! Form::submit('Registrar', ['class' => 'btn btn-success']) !!}
 		</div>
 
-		<!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Avatar</label>  
-		  <div class="col-md-4">
-		  <input id="frm_avatar" name="frm_avatar" type="text" placeholder="imagen" class="form-control input-md" value="{{ $family->avatar }}" />
-		  <span class="help-block">help</span>  
-		  </div>
-		</div>
-
-		
-
-
-		 <button type="submit" class="btn btn-success"> guardar</button>
-		</fieldset>
-	</form>
+	{!! Form::close() !!}
 
 </div>
 @endsection

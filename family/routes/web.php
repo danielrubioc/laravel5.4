@@ -26,5 +26,6 @@ Route::resource('users', 'UserController');
 
 
 
+
 Route::resource('families', 'FamilyController');
 

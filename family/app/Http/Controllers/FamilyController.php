@@ -18,7 +18,7 @@ class FamilyController extends Controller
     public function index()
     {
        
-        $families = DB::table('family')->paginate(15);
+        $families = DB::table('family')->paginate(1);
 
         return view('families.index', ['families' => $families]);
 
@@ -65,7 +65,8 @@ class FamilyController extends Controller
     public function show($id)
     {
         //
-        return view('families.show', ['family' => Family::findOrFail($id)]);
+        $users = 'hola';
+        return view('families.show', ['family' => Family::findOrFail($id),'users' => $users]);
     }
 
     /**
@@ -89,7 +90,10 @@ class FamilyController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        //$request
+        dd($request);die();
+        $family = new Family($request->all());
+        $family->save();
+        return view('families.show', ['family' => Family::findOrFail($id)]);
 
     }
 

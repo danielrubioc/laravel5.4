@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 60)->unique();
             $table->string('password');
             $table->string('avatar');
-            $table->enum('type',['member', 'admin'])->default('member');
+            $table->string('type', 60)->default('member');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -8,7 +8,7 @@ class Family extends Model
 {
     protected $table = "family";
 
-    protected $fillable = ['name','user_id'];
+    protected $fillable = ['name', 'avatar', 'user_id'];
 
     public function user()
     { //funcion con nombre del modelo

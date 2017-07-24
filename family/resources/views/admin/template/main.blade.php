@@ -4,17 +4,17 @@
 	<meta charset="UTF-8">
 	<title>@yield('title','Default') | Panel de administración</title>
 	<link rel="stylesheet" type="text/css" href="{{  asset('pluggins/bootstrap/css/bootstrap.min.css')  }}">
+
 </head>
 <body>
 
 		@include('admin.template.partials.nav')
 
 		<section>
+			
+			@include('flash::message') 
 			@yield('content')
 		</section>
-
-
-
 
 		@include('admin.template.partials.footer')
 

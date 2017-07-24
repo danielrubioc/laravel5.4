@@ -18,8 +18,8 @@
 			{!! Form::text('avatar', null,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
 		</div>	
 		<div class="form-gruop">
-			{!! Form::label('user', 'Usuario')!!}
-			{!! Form::select('user', $users, null,['class' => 'form-control', 'required']) !!}
+			{!! Form::label('user_id', 'Usuario')!!}
+			{!! Form::select('user_id', $users, null,['class' => 'form-control', 'required']) !!}
 		</div>	
 
 
