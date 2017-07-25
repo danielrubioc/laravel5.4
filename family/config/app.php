@@ -178,8 +178,13 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // provider personales
+        // html builder **laravelcollective html**
         'Collective\Html\HtmlServiceProvider',
+        // mensajesflash **LaracastsFlash**
         Laracasts\Flash\FlashServiceProvider::class,
+        // imagenes **laravel-stapler**
+        'Codesleeve\LaravelStapler\Providers\L5ServiceProvider'
+
 
     ],
 

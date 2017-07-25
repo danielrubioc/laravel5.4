@@ -1,0 +1,21 @@
+.body {
+  width: 50%; }
+
+.table-perzonalise thead {
+  background: #5d7588;
+  color: #f3f3f3; }
+
+.table-perzonalise td.especial {
+  display: inline-flex; }
+
+.table-perzonalise .label-success {
+  background-color: #2ab27b;
+  padding: 10px;
+  text-transform: uppercase; }
+
+.table-perzonalise .label-danger {
+  padding: 10px;
+  text-transform: uppercase; }
+
+.table-perzonalise .info {
+  margin-right: 10px; }

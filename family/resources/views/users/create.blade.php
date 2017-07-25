@@ -34,12 +34,16 @@
 			{!! Form::password('password',['class' => 'form-control', 'placeholder' => '*********', 'required']) !!}
 		</div>	
 		<div class="form-gruop">
-			{!! Form::label('avatar', 'Avatar')!!}
-			{!! Form::text('avatar', null,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
+			{!! Form::label('sex', 'sexo')!!}
+			{!! Form::text('sex', null,['class' => 'form-control', 'placeholder' => 'avatar']) !!}
 		</div>	
 		<div class="form-gruop">
 			{!! Form::label('type', 'Tipo')!!}
 			{!! Form::select('type', ['admin' => 'Administrador', 'member' => 'Usuario normal'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona el tipo de usuario', 'required']); !!}
+		</div>
+		<div class="form-gruop">
+			{!! Form::label('avatar', 'Avatar')!!}
+			{!! Form::file('avatar', ['admin' => 'Administrador', 'member' => 'Usuario normal'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona el tipo de usuario', 'required']); !!}
 		</div>
 		
 

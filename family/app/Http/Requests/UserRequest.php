@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
         return [
             //
                 'name' => 'min:4|max:120|required',
-                'email' => 'email|exists:users|required',
+                'email' => 'email|required',
         ];
     }
     public function messages()
@@ -36,7 +36,6 @@ class UserRequest extends FormRequest
             'name.required' => 'El campo nombre es requerido',
             'name.min' => 'El campo debe tener un mínimo de 4 caracteres',
             'email.required' => 'El campo nombre es requerido',
-            'email.exists' => 'El correo ya se encuentra registrado !',
             'email.email' => 'El campo email debe ser una dirección de correo electrónico válida !',
         ];
     }

@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>@yield('title','Default') | Panel de administración</title>
-	<link rel="stylesheet" type="text/css" href="{{  asset('pluggins/bootstrap/css/bootstrap.min.css')  }}">
+	<link rel="stylesheet" type="text/css" href="{{  asset('css/app.css')  }}">
+	<link rel="stylesheet" type="text/css" href="{{  asset('css/stylesheets.css')  }}">
 
 </head>
 <body>

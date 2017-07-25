@@ -1,0 +1,38 @@
+$colorGris : #5d7588;
+$colorBlancoLetras : #f3f3f3;
+$colorVerdeAvisos : #2ab27b;
+$colorMenu: #313941;
+
+
+.body {
+  width:50%;
+}
+
+.table-perzonalise
+{
+	thead 
+	{
+	    background: $colorGris;
+	    color: $colorBlancoLetras;
+	}
+	td.especial 
+	{
+	    display: inline-flex;
+	}
+	.label-success
+	{
+		background-color: $colorVerdeAvisos;
+	    padding: 10px;
+	    text-transform: uppercase;
+	}
+	.label-danger
+	{
+		padding: 10px;
+	    text-transform: uppercase;
+	}
+	.info 
+	{
+	    margin-right: 10px;
+	}
+
+}

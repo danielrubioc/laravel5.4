@@ -30,8 +30,8 @@
 		</div>	
 		
 		<div class="form-gruop">
-			{!! Form::label('avatar', 'Avatar')!!}
-			{!! Form::text('avatar',  $user->avatar,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
+			{!! Form::label('sex', 'sex')!!}
+			{!! Form::text('sex',  $user->sex,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
 		</div>	
 		<div class="form-gruop">
 			{!! Form::label('type', 'Tipo')!!}
