@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = DB::table('users')->paginate(12);
+        $users = \App\User::paginate(4);
 
         return view('users.index', ['users' => $users]);
     }
@@ -98,25 +98,28 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UserRequest $request, $id)
-    {
+    {   
         $user = User::find($id); 
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->sex = $request->sex;
         $user->type = $request->type;
+
+        if($request->avatar != null or $request->avatar){
+            $user->avatar = STAPLER_NULL;
+            $user->avatar = $request->avatar;
+             
+        }
         
         if ($user->save()) {
             flash('El usuario '. $user->name .' se actualizó correctamente!')->success();
-            return redirect('users');
+            return redirect()->route('users.edit', $user->id);
         }else
         {
              flash('Disculpa! el usuario no se pudo crear.')->error();
-             return view('users.edit');
+             return redirect()->route('users.edit', $user->id);
         }
-        
-
-
-
 
     }
 

@@ -5,6 +5,7 @@
 	<title>@yield('title','Default') | Panel de administración</title>
 	<link rel="stylesheet" type="text/css" href="{{  asset('css/app.css')  }}">
 	<link rel="stylesheet" type="text/css" href="{{  asset('css/stylesheets.css')  }}">
+	<link rel="stylesheet" type="text/css" href="{{  asset('css/font-awesome.min.css') }}" />
 
 </head>
 <body>

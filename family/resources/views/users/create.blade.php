@@ -16,11 +16,12 @@
 
 	@endif
 
-
-	<h3><a href="{{ route('users.index') }}">Volver a lista de Usuarios</a> </h3>	
-	<h2>Nuevo Usuario</h2>
-	{!! Form::open(['action' => 'UserController@store', 'method' => 'POST']) !!}
-
+	<div class="title-gral">
+		<h3><a href="{{ route('users.index') }}">Lista de Usuarios</a> </h3>	
+		<h2><i class="fa fa-user-o" aria-hidden="true"></i>Registro de Usuario</h2>
+	</div>
+	<div class="create-forms-informative">
+	{!! Form::open(['action' => 'UserController@store', 'method' => 'POST', 'files' => true]) !!}
 		<div class="form-gruop">
 			{!! Form::label('name', 'Nombre')!!}
 			{!! Form::text('name', null,['class' => 'form-control', 'placeholder' => 'Nombre completo', 'required']) !!}
@@ -52,7 +53,6 @@
 		<div class="form-gruop">
 			{!! Form::submit('Registrar', ['class' => 'btn btn-success']) !!}
 		</div>
-
 	{!! Form::close() !!}
 
 </div>

@@ -6,8 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\User;
 
-class User extends Authenticatable
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
+
+class User extends Authenticatable  implements StaplerableInterface 
 {
+    use EloquentTrait;
     use Notifiable;
 
     /**
@@ -16,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'sex', 'type',
+        'name', 'email', 'password', 'sex', 'type', 'avatar',
     ];
 
     /**
@@ -27,6 +31,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function __construct(array $attributes = array()) {
+        $this->hasAttachedFile('avatar', [
+            'styles' => [
+                'medium' => '300x300',
+                'thumb' => '100x100'
+            ]
+        ]);
+
+        parent::__construct($attributes);
+    }
 
 
     public function family() //es en singular por que me retorna solo 1 familia

@@ -1,21 +1,185 @@
-.body {
-  width: 50%; }
+* {
+  margin: 0;
+  padding: 0; }
 
-.table-perzonalise thead {
-  background: #5d7588;
-  color: #f3f3f3; }
+body {
+  color: #323544;
+  background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99));
+  background: #ece9e9;
+  height: 100vh; }
 
-.table-perzonalise td.especial {
-  display: inline-flex; }
+a {
+  text-decoration: none; }
 
-.table-perzonalise .label-success {
-  background-color: #2ab27b;
-  padding: 10px;
-  text-transform: uppercase; }
+.title-gral {
+  width: 100%;
+  display: inline-block;
+  position: relative; }
+  .title-gral h2 {
+    position: absolute;
+    left: -15px;
+    top: 0;
+    background: linear-gradient(60deg, #ec407a, rgba(216, 27, 96, 0.97));
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.75);
+    padding: 7px 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white; }
+    .title-gral h2 i {
+      border: 1px solid;
+      padding: 10px;
+      margin-right: 15px;
+      color: #323544;
+      background-color: #333333;
+      color: #fff;
+      border: none; }
+  .title-gral h3 {
+    text-shadow: 0 0 black;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .title-gral h3 a {
+      background: linear-gradient(60deg, #03A9F4, #3F51B5);
+      color: #FFFFFF;
+      text-decoration: none;
+      text-shadow: 0 0 black;
+      box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.75);
+      padding: 7px 20px;
+      position: relative;
+      transition: 0.5s; }
+      .title-gral h3 a:before {
+        font-family: 'FontAwesome';
+        content: '\f122';
+        position: absolute;
+        opacity: 0;
+        top: 5px;
+        right: -20px;
+        transition: 0.5s; }
+      .title-gral h3 a:hover:before {
+        opacity: 1;
+        right: 10px; }
+      .title-gral h3 a:hover {
+        padding-right: 45px; }
 
-.table-perzonalise .label-danger {
-  padding: 10px;
-  text-transform: uppercase; }
+.create-forms-informative {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fbfbfb;
+  color: #040b0e;
+  padding: 90px;
+  padding-top: 100px;
+  margin-bottom: 100px;
+  border: none; }
 
-.table-perzonalise .info {
-  margin-right: 10px; }
+.content-gral-index {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 10px;
+  background: #fbfbfb;
+  color: #040b0e;
+  padding: 30px;
+  margin-bottom: 100px;
+  border: none; }
+  .content-gral-index table.table-perzonalise td.especial {
+    display: inline-flex;
+    padding-top: 18px; }
+  .content-gral-index table.table-perzonalise .label-success {
+    background-color: #2ab27b;
+    padding: 10px;
+    text-transform: uppercase; }
+  .content-gral-index table.table-perzonalise .label-danger {
+    padding: 10px;
+    text-transform: uppercase; }
+  .content-gral-index table.table-perzonalise .info {
+    margin-right: 10px; }
+  .content-gral-index table.table-perzonalise thead {
+    color: #f3f3f3;
+    background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99)); }
+  .content-gral-index table.table-perzonalise td {
+    vertical-align: middle; }
+  .content-gral-index table.table-perzonalise td.img-avatar-table {
+    width: 80px; }
+  .content-gral-index table.table-perzonalise a.btn-edit-style {
+    background: linear-gradient(300deg, #2196F3, #043f69);
+    border-radius: 50%;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    padding: 0;
+    text-align: center; }
+    .content-gral-index table.table-perzonalise a.btn-edit-style i {
+      vertical-align: middle;
+      font-size: 17px;
+      top: 0px;
+      left: 1px;
+      position: relative; }
+    .content-gral-index table.table-perzonalise a.btn-edit-style:hover {
+      box-shadow: 0 14px 26px -12px #85b8e0, 0 4px 23px 0px rgba(0, 0, 0, 0.31), 0 8px 10px -5px #1b83d5; }
+  .content-gral-index table.table-perzonalise .btn-delete-style {
+    background: linear-gradient(300deg, #8c0713, #ef0000);
+    border-radius: 50%;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    padding: 0;
+    text-align: center; }
+    .content-gral-index table.table-perzonalise .btn-delete-style i {
+      vertical-align: middle;
+      font-size: 17px;
+      top: -3px;
+      left: 1px;
+      position: relative; }
+    .content-gral-index table.table-perzonalise .btn-delete-style:hover {
+      box-shadow: 0 14px 26px -12px #ce0206, 0 4px 23px 0px rgba(0, 0, 0, 0.31), 0 8px 10px -5px #c00309; }
+
+.informative-descrip {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fbfbfb;
+  color: #040b0e;
+  display: inline-flex;
+  padding-top: 100px;
+  margin-bottom: 100px; }
+  .informative-descrip .user-avatar-preview {
+    max-width: 500px; }
+    .informative-descrip .user-avatar-preview .editing-options-avatar {
+      padding: 10px;
+      background: white;
+      color: #2971cc; }
+  .informative-descrip .blank-box {
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: 100%; }
+    .informative-descrip .blank-box .form-gruop.br-separated {
+      margin-bottom: 30px; }
+      .informative-descrip .blank-box .form-gruop.br-separated .input-personalice {
+        border: 0;
+        background-image: linear-gradient(#a1a5ba, #a1a5ba), linear-gradient(#a1a5ba, #a1a5ba);
+        background-size: 0 2px, 100% 1px;
+        background-repeat: no-repeat;
+        background-position: center bottom, center calc(100% - 1px);
+        background-color: transparent;
+        transition: background 0s ease-out;
+        box-shadow: none;
+        border-radius: 0;
+        font-weight: 400;
+        color: #0e3f56; }
+        .informative-descrip .blank-box .form-gruop.br-separated .input-personalice::placeholder {
+          color: #ff5600; }
+        .informative-descrip .blank-box .form-gruop.br-separated .input-personalice:focus, .informative-descrip .blank-box .form-gruop.br-separated .input-personalice:active, .informative-descrip .blank-box .form-gruop.br-separated .input-personalice:visited {
+          outline: none;
+          background-image: linear-gradient(#4f8fe6, #4f8fe6), linear-gradient(#08a2ef, #4f8fe6);
+          background-size: 100% 2px, 100% 1px;
+          box-shadow: none;
+          transition-duration: 0.3s; }
