@@ -1,13 +1,13 @@
-@extends('admin.template.main')
+@extends('layouts.app')
 
-@section('title', 'home')
+@section('title', 'Lista de usuarios')
 
 
 @section('content')
 
 
 
-	<div class="container" id="gral-list-index">
+	<div id="gral-list-index">
 	<div class="content-gral-index">	
 		
 	    
@@ -16,7 +16,6 @@
 			<h1>Lista de Usuarios</h1>
 		</div>
 	    <br>
-	    
 		    <div class="table-responsive">
 			    <table class="table table-responsive table-perzonalise">
 			    	<thead>

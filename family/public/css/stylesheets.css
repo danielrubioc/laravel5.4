@@ -5,8 +5,71 @@
 body {
   color: #323544;
   background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99));
-  background: #ece9e9;
-  height: 100vh; }
+  background: #f8f8f8;
+  height: 100vh;
+  position: relative; }
+  body aside.options-perfil {
+    position: absolute;
+    width: 224px;
+    background-color: #323544;
+    color: #a1a5ba;
+    position: absolute;
+    overflow: visible;
+    padding-bottom: 24px;
+    height: 100vh;
+    -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+    z-index: 520; }
+    body aside.options-perfil .top-avatar-main {
+      display: inline-block;
+      width: 100%;
+      height: 200px; }
+      body aside.options-perfil .top-avatar-main .box-img-av {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative; }
+      body aside.options-perfil .top-avatar-main img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      body aside.options-perfil .top-avatar-main h3 {
+        text-align: center;
+        font-size: 15px; }
+    body aside.options-perfil ul.list-aside-informative {
+      line-height: 40px;
+      cursor: pointer;
+      margin: 28px 0;
+      text-align: center; }
+      body aside.options-perfil ul.list-aside-informative li {
+        display: block; }
+        body aside.options-perfil ul.list-aside-informative li a {
+          padding: 0 16px;
+          font-size: 12px;
+          line-height: 42px;
+          height: 42px;
+          text-transform: uppercase;
+          color: #9999a1;
+          display: block; }
+          body aside.options-perfil ul.list-aside-informative li a:hover {
+            background-color: #1e202c;
+            text-shadow: none; }
+  body .nav-perzonalice-all {
+    position: relative;
+    min-height: 50px;
+    background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99));
+    margin-bottom: 0;
+    border: 1px solid transparent; }
+    body .nav-perzonalice-all li a {
+      padding: 5px 10px; }
+  body section.section-principal-all {
+    margin-left: 224px;
+    overflow: auto;
+    height: 100vh; }
 
 a {
   text-decoration: none; }
@@ -82,7 +145,8 @@ a {
   color: #040b0e;
   padding: 30px;
   margin-bottom: 100px;
-  border: none; }
+  border: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); }
   .content-gral-index table.table-perzonalise td.especial {
     display: inline-flex;
     padding-top: 18px; }

@@ -1,4 +1,4 @@
-@extends('admin.template.main')
+@extends('layouts.app')
 @section('title', 'Editando : '.$user->name )
 @section('content')
 
@@ -23,7 +23,6 @@
 	<div class="informative-descrip">
 		<div class="user-avatar-preview">
 			<img src="{{ asset($user->avatar->url()) }}" class="img-responsive">
-			<?php  $oldAvatar = $user->avatar; ?>
 			<input type="hidden" value="<?php $user->avatar ?>" id="oldAvatar">
 			<div class="editing-options-avatar">
 				<div class="form-gruop">

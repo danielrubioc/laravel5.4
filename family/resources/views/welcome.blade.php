@@ -1,6 +1,6 @@
-@extends('admin.template.main')
+@extends('layouts.app')
 
-@section('title', 'home')
+@section('title', 'Index')
 
 
 @section('content')

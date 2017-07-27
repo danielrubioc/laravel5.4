@@ -1,4 +1,4 @@
-@extends('admin.template.main') 
+@extends('layouts.app')
 @section('title', 'Editando: '.$family->name)
 <?php var_dump($family) ?>
 

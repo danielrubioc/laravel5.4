@@ -11,8 +11,98 @@ $colorBtnBack: linear-gradient(60deg, #03A9F4, #3F51B5);;
 body {
     color: #323544;
     background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99));
-   	background: #ece9e9;
+   	background: #f8f8f8;
     height: 100vh;
+    position: relative;
+	    	aside.options-perfil 
+	    	{
+			    position: absolute;
+			    width: 224px;
+			    background-color: #323544;
+    			color: #a1a5ba;
+			    position: absolute;
+			    overflow: visible;
+			    padding-bottom: 24px;
+			    height: 100vh;
+			    -webkit-transition: all .3s cubic-bezier(.215,.61,.355,1);
+			    transition: all .3s cubic-bezier(.215,.61,.355,1);
+			    box-shadow: 4px 4px 20px 0 rgba(0,0,0,.01);
+			    z-index: 520;
+	    			.top-avatar-main 
+	    			{
+					    display: inline-block;
+					    width: 100%;
+					    height: 200px;
+					    .box-img-av
+					    {
+					    	width: 150px;
+						    height: 150px;
+						    border-radius: 50%;
+						    margin: 0 auto;
+						    overflow: hidden;
+						    position: relative;
+					    }
+					    img 
+				    	{
+						    position: absolute;
+						    top: 50%;
+						    left: 50%;
+						    transform: translate(-50%, -50%);
+						}
+						h3
+						{
+							text-align: center;
+					    	font-size: 15px;
+						}
+					}
+					ul.list-aside-informative 
+					{
+					    line-height: 40px;
+					    cursor: pointer;
+					    margin: 28px 0;
+					    text-align: center;
+				    		li
+				    		{
+			    			    display: block;
+							    			a
+							    			{	
+							    				padding: 0 16px;
+											    font-size: 12px;
+											    line-height: 42px;
+											    height: 42px;
+											    text-transform: uppercase;
+							    				color: #9999a1;
+							    				display: block;
+							    				&:hover
+							    				{
+						    					    background-color: #1e202c;
+													text-shadow: none;
+							    				}
+							    			}
+				    		}
+					}
+			}
+			.nav-perzonalice-all 
+			{
+			    position: relative;
+			    min-height: 50px;
+			    background: linear-gradient(4deg, #114e6b, rgba(0, 0, 0, 0.99));
+			    margin-bottom: 0;
+			    border: 1px solid transparent;
+			    	 li
+			    	 {	
+			    	 	a{
+			    	 	    padding: 5px 10px;
+			    	 	 }
+			    	 }
+
+			}
+			section.section-principal-all 
+			{
+			    margin-left: 224px;
+			    overflow: auto;
+			    height: 100vh;
+			}
 }
 a
 {
@@ -108,6 +198,7 @@ a
     padding: 30px;
     margin-bottom: 100px;
     border: none;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
     		table.table-perzonalise
     		{	
 
