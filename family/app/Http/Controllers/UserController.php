@@ -104,6 +104,11 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->sex = $request->sex;
+
+        if (!$request->type) {
+           $request->type = 'member';
+        }
+
         $user->type = $request->type;
 
         if($request->avatar != null or $request->avatar){

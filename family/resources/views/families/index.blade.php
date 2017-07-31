@@ -12,10 +12,10 @@
 
 	    <table class="table table-responsive">
 	    	<thead>
-	    			<tr>
-	    					<td>Nombre</td>
-	    					<td>Avatar</td>
-	    					<td>Tipo</td>
+	    			<tr>	
+	    					<td></td>
+	    					<td>Nombre Familia</td>
+	    					<td>Nombre Usuario</td>
 	    					<td>Accion</td>
 
 	    			</tr>
@@ -23,9 +23,12 @@
 	    	<tbody>
 	    			@foreach ($families as $family)
 		    			<tr>	
+		    				<td class="img-avatar-table"><img src="{!! $family->avatar->url('thumb') !!}" class="img-responsive" alt=""></td>
 						    <td>{{ $family->name }}</td>
-						    <td>{{ $family->avatar }}</td>
-						    <td><a href="" class="btn btn-danger">Eliminar</a> <a href="{{ URL::to('families/'.$family->id.'')}}" class="btn btn-info">Editar</a></td>
+						    <td>{{ $family->user->name }}</td>
+						    <td>
+						    	<a href="" class="btn btn-danger">Eliminar</a> 
+						    	<a href="{{ route('families.edit', $family->id) }}" class="btn btn-info">Editar</a></td>
 		    			</tr>
 	    			@endforeach
 	    	</tbody>

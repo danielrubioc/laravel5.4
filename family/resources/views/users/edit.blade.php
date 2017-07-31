@@ -22,8 +22,23 @@
 	{!! Form::open(['route' => [ 'users.update', $user->id ], 'method' => 'PUT', 'files' => true]) !!}
 	<div class="informative-descrip">
 		<div class="user-avatar-preview">
-			<img src="{{ asset($user->avatar->url()) }}" class="img-responsive">
-			<input type="hidden" value="<?php $user->avatar ?>" id="oldAvatar">
+			
+			  @if( Auth::user()->avatar_file_name == null or  !Auth::user()->avatar_file_name)
+
+	                @if(Auth::user()->sex == 'Masculino')
+	                    <img src="{{asset('images/default-avatars/man1.svg')}}" class="img-responsive" alt="" />  
+	                @else 
+	                    <img src="{{asset('images/default-avatars/girl.svg')}}" class="img-responsive" alt="" /> 
+	                @endif  
+
+	          @else
+
+	                <img src="{{ asset(Auth::user()->avatar->url('medium')) }}" class="img-responsive">
+	         
+	          @endif  
+
+
+			
 			<div class="editing-options-avatar">
 				<div class="form-gruop">
 					<p>Selecciona si quieres cambiar el avatar</p>
@@ -45,10 +60,15 @@
 			{!! Form::label('sex', 'Sexo')!!}
 			{!! Form::text('sex',  $user->sex,['class' => 'form-control input-personalice', 'placeholder' => 'avatar', 'required']) !!}
 		</div>	
+
+		@if(Auth::user()->type == 'admin')
+
 		<div class="form-gruop br-separated">
 			{!! Form::label('type', 'Tipo')!!}
 			{!! Form::select('type', ['member' => 'Usuario normal', 'admin' => 'Administrador'],  $user->type, ['class' => 'form-control input-personalice', 'placeholder' => 'Selecciona el tipo de usuario', 'required']); !!}
 		</div>
+
+		@endif
 		<div class="form-gruop br-separated">
 			{!! Form::submit('Actualiza', ['class' => 'btn btn-success pull-right']) !!}
 		</div>

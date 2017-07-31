@@ -47,8 +47,8 @@
                             </ul>
                         @else
                             <ul class="nav navbar-nav">
-                                <li><a href="{{ URL::to('users') }}">Perfil</a></li>
-                                <li><a href="{{ URL::to('users') }}">Mi Familia</a></li>
+                                <li><a href="{{ URL::to('users') }}">Informaciónes</a></li>
+                               
                             </ul>
 
                         @endif
@@ -101,10 +101,10 @@
                     </li>
                     <li>    
 
-                        <a href="/users/{{ Auth::user()->id }}/edit">Mi perfil</a>
+                        <a href="{{ route('users.edit', Auth::user()->id) }}">Mi perfil</a>
                     </li>
                     <li>
-                        <a href="{{ route('logout') }}">Mi Familia</a>
+                        <a href="{{ route('families.editFamily', Auth::user()->id) }}">Mi Familia</a>
 
                     </li>
                 @endif

@@ -18,7 +18,7 @@ class FamilyController extends Controller
     public function index()
     {
        
-        $families = DB::table('family')->paginate(1);
+        $families = \App\Family::paginate(1);
 
         return view('families.index', ['families' => $families]);
 
@@ -52,7 +52,16 @@ class FamilyController extends Controller
         //
         //dd($request->all());
         $family = new Family($request->all());
-        $family->save();
+        
+        if ($family->save()) 
+        {
+             flash('El usuario se creo correctamente!')->success();
+             return redirect('users');
+        }else
+        {
+             flash('Disculpa! el usuario no se pudo crear.')->error();
+             return view('users.create');
+        }
 
     }
 
@@ -77,7 +86,18 @@ class FamilyController extends Controller
      */
     public function edit($id)
     {
-        //
+        //  
+        return view('families.edit', ['family' => Family::findOrFail($id)]);
+  
+    }
+    public function editFamily($id)
+    {
+        //  
+        
+        $family = Family::where('user_id', $id)->first();
+
+
+        return view('families.Userfamily', ['family' => $family]);
   
     }
 
@@ -90,10 +110,7 @@ class FamilyController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        dd($request);die();
-        $family = new Family($request->all());
-        $family->save();
-        return view('families.show', ['family' => Family::findOrFail($id)]);
+        return redirect()->route('users.edit', $user->id);
 
     }
 

@@ -26,6 +26,7 @@ Route::resource('users', 'UserController');
 
 Route::resource('families', 'FamilyController');
 
+Route::get('/families/{family}/editFamily', 'FamilyController@editFamily')->name('families.editFamily');
 
 Auth::routes();
 

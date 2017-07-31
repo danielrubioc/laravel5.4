@@ -7,7 +7,7 @@
 <div class="container">
 	<h3><a href="{{ route('families.index') }}">Volver a lista de familias</a> </h3>	
 	
-	{!! Form::open(['action' => 'FamilyController@store', 'method' => 'POST']) !!}
+	{!! Form::open(['action' => 'FamilyController@store', 'method' => 'POST', 'files' => true]) !!}
 
 		<div class="form-gruop">
 			{!! Form::label('name', 'Nombre')!!}
@@ -15,12 +15,22 @@
 		</div>		
 		<div class="form-gruop">
 			{!! Form::label('avatar', 'Avatar')!!}
-			{!! Form::text('avatar', null,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
+			{!! Form::file('avatar', ['admin' => 'Administrador', 'member' => 'Usuario normal'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona el tipo de usuario', 'required']); !!}
 		</div>	
-		<div class="form-gruop">
+		@if(Auth::user()->type == 'admin')
+			<div class="form-gruop">
 			{!! Form::label('user_id', 'Usuario')!!}
 			{!! Form::select('user_id', $users, null,['class' => 'form-control', 'required']) !!}
-		</div>	
+			</div>	
+		@else
+			<div class="form-gruop">
+				{!! Form::label('Usuario', 'Avatar')!!}
+				{!! Form::hidden('user_id', Auth::user()->id,['class' => 'form-control', 'placeholder' => 'avatar', 'required']) !!}
+			</div>	
+
+		@endif
+		
+
 
 
 		<div class="form-gruop">
